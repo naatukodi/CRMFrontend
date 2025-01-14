@@ -1,0 +1,20 @@
+import {
+    Component
+}
+
+from '@angular/core';
+
+import {
+    FarmerQuestionnaireComponent
+}
+
+from './farmer-questionnaire/farmer-questionnaire.component';
+
+@Component({
+
+    selector: 'app-root',
+    standalone: true,
+    imports: [FarmerQuestionnaireComponent],
+    template: `<app-farmer-questionnaire></app-farmer-questionnaire>`,
+    styleUrls: ['./app.component.scss'],
+}) export class AppComponent {}
