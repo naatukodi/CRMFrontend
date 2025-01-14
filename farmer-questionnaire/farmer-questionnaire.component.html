@@ -1,0 +1,178 @@
+<h1>Farmer Questionnaire</h1>
+<form (ngSubmit)="onSubmit()" #questionnaireForm="ngForm" class="questionnaire-form">
+    <!-- Customer Information -->
+    <h3>Customer Information</h3>
+    <div class="form-group">
+        <label for="customerId">Customer ID:</label>
+        <input type="text" id="customerId" name="customerId" [(ngModel)]="formData.CustomerId" required />
+    </div>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="formData.Name" required />
+    </div>
+    <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" [(ngModel)]="formData.Location" required />
+    </div>
+    <div class="form-group">
+        <label for="contactInfo">Contact Info:</label>
+        <input type="text" id="contactInfo" name="contactInfo" [(ngModel)]="formData.ContactInfo" required />
+    </div>
+
+    <!-- Farming Details -->
+    <h3>Farming Details</h3>
+    <div class="form-group">
+        <label for="chickenBreeds">Chicken Breeds:</label>
+        <input type="text" id="chickenBreeds" name="chickenBreeds" [(ngModel)]="formData.ChickenBreeds" />
+    </div>
+    <div class="form-group">
+        <label for="rearingMethod">Rearing Method:</label>
+        <select id="rearingMethod" name="rearingMethod" [(ngModel)]="formData.RearingMethod">
+            <option value="Free-range">Free-range</option>
+            <option value="Farm-based">Farm-based</option>
+            <option value="Others">Others</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="chickenCount">Chicken Count:</label>
+        <select id="chickenCount" name="chickenCount" [(ngModel)]="formData.ChickenCount">
+            <option value="0-50">0-50</option>
+            <option value="50-100">50-100</option>
+            <option value="100-500">100-500</option>
+            <option value="More than 500">More than 500</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="monthlySales">Monthly Sales:</label>
+        <select id="monthlySales" name="monthlySales" [(ngModel)]="formData.MonthlySales">
+            <option value="0-50">0-50</option>
+            <option value="50-100">50-100</option>
+            <option value="100-500">100-500</option>
+            <option value="More than 500">More than 500</option>
+        </select>
+    </div>
+
+    <!-- Feed Materials -->
+    <h3>Feed Materials</h3>
+    <div class="form-group">
+    <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials" value="Commercial feed" />
+    Commercial feed<br />
+    <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials" value="Wheat" />
+    Wheat<br />
+    <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials" value="Pulses" />
+    Pulses<br />
+    <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials" value="Others" />
+    Others
+    <!-- Health and Vet Support -->
+    <h3>Health Practices and Vet Support</h3>
+    <div class="form-group"></div>
+    <label for="healthPractices">Health Practices:</label>
+    <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices" value="Disease prevention" />
+    Disease prevention<br />
+    <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices"
+        value="Regular health check-ups" />
+    Regular health check-ups<br />
+    <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices" value="Vaccinations" />
+    Vaccinations<br />
+    <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices" value="Others" />
+    Others
+    </div>
+    <div class="form-group">
+        <label>Do you have access to veterinary services?</label>
+        <input type="radio" name="hasVetAccess" [(ngModel)]="formData.HasVetAccess" [value]="true" /> Yes
+        <input type="radio" name="hasVetAccess" [(ngModel)]="formData.HasVetAccess" [value]="false" /> No
+    </div>
+    <div class="form-group">
+        <label for="vetSupportType">Vet Support Needed:</label>
+        <input type="checkbox" name="vetSupportType" [(ngModel)]="formData.VetSupportType"
+            value="Regular health check-ups" />
+        Regular health check-ups<br />
+        <input type="checkbox" name="vetSupportType" [(ngModel)]="formData.VetSupportType" value="Emergency care" />
+        Emergency care<br />
+        <input type="checkbox" name="vetSupportType" [(ngModel)]="formData.VetSupportType" value="Vaccination programs" />
+        Vaccination programs
+    </div>
+
+    <!-- Assistance Required -->
+    <h3>Assistance Required</h3>
+    <div class="form-group">
+        <input type="checkbox" name="assistanceRequired" [(ngModel)]="formData.AssistanceRequired"
+            value="Feeding methods" />
+        Feeding methods<br />
+        <input type="checkbox" name="assistanceRequired" [(ngModel)]="formData.AssistanceRequired"
+            value="Disease prevention" />
+        Disease prevention<br />
+        <input type="checkbox" name="assistanceRequired" [(ngModel)]="formData.AssistanceRequired" value="Marketing" />
+        Marketing
+    </div>
+
+    <!-- Challenges and Feedback -->
+    <h3>Challenges and Feedback</h3>
+    <div class="form-group">
+        <label>Are you facing challenges in chicken farming?</label>
+        <input type="radio" name="facingChallenges" [(ngModel)]="formData.FacingChallenges" [value]="true" /> Yes
+        <input type="radio" name="facingChallenges" [(ngModel)]="formData.FacingChallenges" [value]="false" /> No
+    </div>
+    <div class="form-group">
+        <label for="challengeDetails">Challenge Details:</label>
+        <textarea id="challengeDetails" name="challengeDetails" [(ngModel)]="formData.ChallengeDetails"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="suggestions">Suggestions:</label>
+        <textarea id="suggestions" name="suggestions" [(ngModel)]="formData.Suggestions"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-button">Submit</button>
+</form>
+
+<style>
+    .questionnaire-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-group input[type="checkbox"],
+    .form-group input[type="radio"] {
+        width: auto;
+    }
+
+    .submit-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .submit-button:hover {
+        background-color: #45a049;
+    }
+</style>
