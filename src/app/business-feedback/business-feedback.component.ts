@@ -1,0 +1,51 @@
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
+@Component({
+  selector: 'app-business-feedback',
+  standalone: true,
+  templateUrl: './business-feedback.component.html',
+  imports: [
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+  ],
+  styleUrls: ['./business-feedback.component.css'],
+})
+export class BusinessFeedbackComponent {
+  formData: any = {
+    chickenProducts: [], // Initialize as an empty array
+  };
+
+  constructor(private http: HttpClient) { }
+
+  updateCheckbox(event: Event, value: string) {
+    const checkbox = event.target as HTMLInputElement;
+
+    if (checkbox.checked) {
+      this.formData.chickenProducts.push(value);
+    } else {
+      const index = this.formData.chickenProducts.indexOf(value);
+      if (index > -1) {
+        this.formData.chickenProducts.splice(index, 1);
+      }
+    }
+  }
+
+  onSubmit() {
+    console.log('Form Data:', this.formData); // For debugging
+    this.http.post('https://your-api-endpoint/api/business-feedback', this.formData).subscribe({
+      next: (response) => {
+        alert('Feedback submitted successfully!');
+        console.log('Response:', response);
+      },
+      error: (error) => {
+        alert('Failed to submit feedback. Please try again.');
+        console.error('Error:', error);
+      },
+    });
+  }
+}
