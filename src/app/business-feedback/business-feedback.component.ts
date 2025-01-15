@@ -37,7 +37,7 @@ export class BusinessFeedbackComponent {
 
   onSubmit() {
     console.log('Form Data:', this.formData); // For debugging
-    this.http.post('https://your-api-endpoint/api/business-feedback', this.formData).subscribe({
+    this.http.post('https://naatukodiappservice.azurewebsites.net/api/BusinessFeedback', this.formData).subscribe({
       next: (response) => {
         alert('Feedback submitted successfully!');
         console.log('Response:', response);
