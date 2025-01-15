@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "route": "/questionnaire",
+      "rewrite": "/questionnaire"
+    }
+  ]
+}
