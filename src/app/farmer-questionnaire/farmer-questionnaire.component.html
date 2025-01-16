@@ -55,27 +55,27 @@
     <!-- Feed Materials -->
     <h3>Feed Materials</h3>
     <div class="form-group">
-        <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials" value="Commercial feed" />
+        <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials['Commercial feed']" />
         Commercial feed<br />
-        <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials" value="Wheat" />
+        <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials['Wheat']" />
         Wheat<br />
-        <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials" value="Pulses" />
+        <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials['Pulses']" />
         Pulses<br />
-        <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials" value="Others" />
+        <input type="checkbox" name="feedMaterials" [(ngModel)]="formData.FeedMaterials['Others']" />
         Others
-        <!-- Health and Vet Support -->
-        <h3>Health Practices and Vet Support</h3>
-        <div class="form-group"></div>
+    </div>
+    <!-- Health and Vet Support -->
+    <h3>Health Practices and Vet Support</h3>
+    <div class="form-group">
         <label for="healthPractices">Health Practices:</label>
-        <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices"
-            value="Disease prevention" />
+        <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices['Disease prevention']" />
         Disease prevention<br />
-        <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices"
-            value="Regular health check-ups" />
+        <input type="checkbox" name="healthPractices"
+            [(ngModel)]="formData.HealthPractices['Regular health check-ups']" />
         Regular health check-ups<br />
-        <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices" value="Vaccinations" />
+        <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices['Vaccinations']" />
         Vaccinations<br />
-        <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices" value="Others" />
+        <input type="checkbox" name="healthPractices" [(ngModel)]="formData.HealthPractices['Others']" />
         Others
     </div>
     <div class="form-group">
@@ -85,35 +85,31 @@
     </div>
     <div class="form-group">
         <label for="vetSupportType">Vet Support Needed:</label>
-        <input type="checkbox" name="vetSupportType" [(ngModel)]="formData.VetSupportType"
-            value="Regular health check-ups" />
+        <input type="checkbox" name="vetSupportType"
+            [(ngModel)]="formData.VetSupportType['Regular health check-ups']" />
         Regular health check-ups<br />
-        <input type="checkbox" name="vetSupportType" [(ngModel)]="formData.VetSupportType" value="Emergency care" />
+        <input type="checkbox" name="vetSupportType" [(ngModel)]="formData.VetSupportType['Emergency care']" />
         Emergency care<br />
-        <input type="checkbox" name="vetSupportType" [(ngModel)]="formData.VetSupportType"
-            value="Vaccination programs" />
+        <input type="checkbox" name="vetSupportType" [(ngModel)]="formData.VetSupportType['Vaccination programs']" />
         Vaccination programs
     </div>
-
     <!-- Assistance Required -->
     <h3>Assistance Required</h3>
     <div class="form-group">
-        <input type="checkbox" name="assistanceRequired" [(ngModel)]="formData.AssistanceRequired"
-            value="Feeding methods" />
+        <input type="checkbox" name="assistanceRequired" [(ngModel)]="formData.AssistanceRequired['Feeding methods']" />
         Feeding methods<br />
-        <input type="checkbox" name="assistanceRequired" [(ngModel)]="formData.AssistanceRequired"
-            value="Disease prevention" />
+        <input type="checkbox" name="assistanceRequired"
+            [(ngModel)]="formData.AssistanceRequired['Disease prevention']" />
         Disease prevention<br />
-        <input type="checkbox" name="assistanceRequired" [(ngModel)]="formData.AssistanceRequired" value="Marketing" />
+        <input type="checkbox" name="assistanceRequired" [(ngModel)]="formData.AssistanceRequired['Marketing']" />
         Marketing
     </div>
-
-    <!-- Challenges and Feedback -->
-    <h3>Challenges and Feedback</h3>
     <div class="form-group">
         <label>Are you facing challenges in chicken farming?</label>
-        <input type="radio" name="facingChallenges" [(ngModel)]="formData.FacingChallenges" [value]="true" /> Yes
-        <input type="radio" name="facingChallenges" [(ngModel)]="formData.FacingChallenges" [value]="false" /> No
+        <input type="radio" name="facingChallenges" [(ngModel)]="formData.FacingChallenges" [value]="true" />
+        Yes
+        <input type="radio" name="facingChallenges" [(ngModel)]="formData.FacingChallenges" [value]="false" />
+        No
     </div>
     <div class="form-group">
         <label for="challengeDetails">Challenge Details:</label>
@@ -127,3 +123,54 @@
     <!-- Submit Button -->
     <button type="submit" class="submit-button">Submit</button>
 </form>
+
+<style>
+    .questionnaire-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-group input[type="checkbox"],
+    .form-group input[type="radio"] {
+        width: auto;
+    }
+
+    .submit-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .submit-button:hover {
+        background-color: #45a049;
+    }
+</style>
