@@ -173,9 +173,7 @@ export class FarmerQuestionnaireComponent {
       : [];
 
     // 3. Wrap everything in a "questionnaire" property
-    const requestBody = {
-      questionnaire: payload,
-    };
+    const requestBody = payload;
 
     console.log('Submitting form data:', requestBody);
 
