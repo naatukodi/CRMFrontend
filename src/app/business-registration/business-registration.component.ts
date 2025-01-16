@@ -22,7 +22,7 @@ export class BusinessRegistrationComponent {
 
   onSubmit() {
     console.log('Form Data:', this.formData);
-    this.http.post('https://your-api-endpoint/api/business-registration', this.formData).subscribe({
+    this.http.post('https://naatukodiappservice.azurewebsites.net/api/BusinessRegistration', this.formData).subscribe({
       next: (response) => {
         alert('Business Registered Successfully!');
         console.log('Response:', response);
