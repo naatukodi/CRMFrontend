@@ -5,15 +5,15 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-business-feedback',
+  selector: 'app-business-questionnaire',
   standalone: true,
-  templateUrl: './business-feedback.component.html',
+  templateUrl: './business-questionnaire.component.html',
   imports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
   ],
-  styleUrls: ['./business-feedback.component.css'],
+  styleUrls: ['./business-questionnaire.component.css'],
 })
 export class BusinessFeedbackComponent {
   formData: any = {
@@ -37,9 +37,9 @@ export class BusinessFeedbackComponent {
 
   onSubmit() {
     console.log('Form Data:', this.formData); // For debugging
-    this.http.post('https://naatukodiappservice.azurewebsites.net/api/BusinessFeedback', this.formData).subscribe({
+    this.http.post('https://naatukodiappservice.azurewebsites.net/api/BusinessQuestionnaire', this.formData).subscribe({
       next: (response) => {
-        alert('Feedback submitted successfully!');
+        alert('Business Questionnaire submitted successfully!');
         console.log('Response:', response);
       },
       error: (error) => {
