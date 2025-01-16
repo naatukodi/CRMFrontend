@@ -3,6 +3,7 @@ import { FarmerQuestionnaireComponent } from './farmer-questionnaire/farmer-ques
 import { BusinessQuestionnaireComponent } from './business-questionnaire/business-questionnaire.component';
 import { BusinessRegistrationComponent } from './business-registration/business-registration.component';
 import { FarmerRegistrationComponent } from './farmer-registration/farmer-registration.component';
+import { ChickenFarmingComponent } from './chicken-farming/chicken-farming.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'farmersurvey', pathMatch: 'full' },
@@ -10,4 +11,5 @@ export const routes: Routes = [
   { path: 'businesssurvey', component: BusinessQuestionnaireComponent },
   { path: 'businessregistration', component: BusinessRegistrationComponent },
   { path: 'farmerregistration', component: FarmerRegistrationComponent },
+  { path: 'chickenfarming', component: ChickenFarmingComponent },
 ];
