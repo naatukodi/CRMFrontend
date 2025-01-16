@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   styleUrls: ['./business-questionnaire.component.css'],
 })
-export class BusinessFeedbackComponent {
+export class BusinessQuestionnaireComponent {
   formData: any = {
     chickenProducts: [], // Initialize as an empty array
   };

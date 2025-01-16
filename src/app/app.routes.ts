@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 import { FarmerQuestionnaireComponent } from './farmer-questionnaire/farmer-questionnaire.component';
-import { BusinessFeedbackComponent } from './business-questionnaire/business-questionnaire.component';
+import { BusinessQuestionnaireComponent } from './business-questionnaire/business-questionnaire.component';
+import { BusinessRegistrationComponent } from './business-registration/business-registration.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'questionnaire', pathMatch: 'full' },
-  { path: 'questionnaire', component: FarmerQuestionnaireComponent },
-  { path: 'businessquestionnaire', component: BusinessFeedbackComponent },
+  { path: '', redirectTo: 'farmersurvey', pathMatch: 'full' },
+  { path: 'farmersurvey', component: FarmerQuestionnaireComponent },
+  { path: 'businesssurvey', component: BusinessQuestionnaireComponent },
+  { path: 'businessregistration', component: BusinessRegistrationComponent },
 ];
