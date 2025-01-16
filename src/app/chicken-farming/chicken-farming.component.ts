@@ -22,7 +22,7 @@ export class ChickenFarmingComponent {
 
   onSubmit() {
     console.log('Form Data:', this.formData);
-    this.http.post('https://your-api-endpoint/api/chicken-farming/register', this.formData).subscribe({
+    this.http.post('https://naatukodiappservice.azurewebsites.net/api/ChickenFarming/register', this.formData).subscribe({
       next: (response) => {
         alert('Chicken Farming Registered Successfully!');
       },
@@ -33,7 +33,7 @@ export class ChickenFarmingComponent {
   }
 
   onSubmitFeedback(feedbackData: any) {
-    this.http.post('https://your-api-endpoint/api/chicken-farming/feedback', feedbackData).subscribe({
+    this.http.post('https://naatukodiappservice.azurewebsites.net/api/ChickenFarming/feedback', feedbackData).subscribe({
       next: (response) => {
         alert('Feedback Submitted Successfully!');
       },
