@@ -1,25 +1,19 @@
 <h1>Farmer Registration Form</h1>
 <form class="questionnaire-form" (ngSubmit)="onSubmit()" #registrationForm="ngForm">
-    <!-- Personal Details -->
     <h3>Personal Details</h3>
     <div class="form-group">
         <label for="customerId">Customer ID:</label>
-        <input type="text" id="customerId" name="customerId" [(ngModel)]="formData.customerId" required />
+        <input type="text" id="customerId" name="customerId" [(ngModel)]="formData.customerId" readonly />
     </div>
     <div class="form-group">
         <label for="fullName">Full Name:</label>
         <input type="text" id="fullName" name="fullName" [(ngModel)]="formData.fullName" required />
     </div>
     <div class="form-group">
-        <label for="aadharNumber">Aadhar Number:</label>
-        <input type="text" id="aadharNumber" name="aadharNumber" [(ngModel)]="formData.aadharNumber" required />
-    </div>
-    <div class="form-group">
         <label for="phoneOrEmail">Phone Number/Email:</label>
-        <input type="text" id="phoneOrEmail" name="phoneOrEmail" [(ngModel)]="formData.phoneOrEmail" required />
+        <input type="text" id="phoneOrEmail" name="phoneOrEmail" [(ngModel)]="formData.phoneOrEmail" readonly />
     </div>
 
-    <!-- Farmer Type & Subtype -->
     <h3>Farmer Type</h3>
     <div class="form-group">
         <label for="farmerType">Select Farmer Type:</label>
@@ -35,7 +29,6 @@
         <input type="text" id="farmerSubtype" name="farmerSubtype" [(ngModel)]="formData.farmerSubtype" />
     </div>
 
-    <!-- Location Information -->
     <h3>Farm Address</h3>
     <div class="form-group">
         <label for="address">Address:</label>
@@ -54,6 +47,5 @@
         <input type="text" id="zipcode" name="zipcode" [(ngModel)]="formData.zipcode" required />
     </div>
 
-    <!-- Submit Button -->
     <button type="submit" class="submit-button">Register Farmer</button>
 </form>

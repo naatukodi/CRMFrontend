@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,10 +16,28 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   styleUrls: ['./farmer-registration.component.css'],
 })
-export class FarmerRegistrationComponent {
-  formData: any = {};
+export class FarmerRegistrationComponent implements OnInit {
+  formData: any = {
+    customerId: '',
+    fullName: '',
+    phoneOrEmail: '',
+  };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.formData.fullName = params['name'] || '';
+      this.formData.phoneOrEmail = params['phone'] || '';
+      
+      // Generate a unique customer ID
+      this.formData.customerId = this.generateCustomerId(this.formData.phoneOrEmail);
+    });
+  }
+
+  generateCustomerId(phoneNumber: string): string {
+    return 'FARM' + phoneNumber.slice(-4) + '-' + new Date().getTime(); // Example: FARM1234-1706123456789
+  }
 
   onSubmit() {
     console.log('Form Data:', this.formData);
