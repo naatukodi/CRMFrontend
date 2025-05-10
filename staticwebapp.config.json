@@ -1,10 +1,1 @@
-{
-    "navigationFallback": {
-        "rewrite": "index.html",
-        "exclude": [
-            "/images/*",
-            "/*.css",
-            "/*.js"
-        ]
-    }
-}
+{"navigationFallback":{"rewrite":"index.html","exclude":["/images/*","/*.css","/*.js"]},"auth":{"rolesSource":"/api/getuserroles","identityProviders":{"google":{"registration":{"clientIdSettingName":"GOOGLE_CLIENT_ID","clientSecretSettingName":"GOOGLE_CLIENT_SECRET_APP_SETTING_NAME"}}}}}
